@@ -3,7 +3,7 @@
 Alignment and Proximity-Ligation QC
 ===================================
 
-At step :ref:`Removing PCR duplicates<DUPs>` you used the flag `--output-stats`, generating a stats file in addition to the pairsam output (e.g. --output-stats stats.txt). The stats file is an extensive output of pairs statistics as calculated by pairtools, including total reads, total mapped, total dups, total pairs for each pair of chromosomes etc'. Although you can use directly the pairtools stats file as is to get informed on the quality of the TopoLink library, we find it easier to focus on a few key metrics. We include in this repository the script ``get_qc.py`` that summarize the paired-tools stats file and present them in percentage values in addition to absolute values.
+At step :ref:`Removing PCR duplicates<DUPs>` you used the flag `--output-stats`, generating a stats file in addition to the pairsam output (e.g. --output-stats stats.txt). The stats file is an extensive output of pairs statistics as calculated by pairtools, including total reads, total mapped, total dups, total pairs for each pair of chromosomes etc'. Although you can use directly the pairtools stats file as is to get informed on the quality of the VariLink library, we find it easier to focus on a few key metrics. We include in this repository the script ``get_qc.py`` that summarize the paired-tools stats file and present them in percentage values in addition to absolute values.
 
 The images below explains how the values on the QC report are calculated:
 
@@ -15,14 +15,14 @@ The images below explains how the values on the QC report are calculated:
 
 .. code-block:: console
 
-   python3 ./TopoLink/get_qc.py -p <stats.txt>
+   python3 ./VariLink/get_qc.py -p <stats.txt>
 
 
 **Example:**
 
 .. code-block:: console
 
-   python3 ./TopoLink/get_qc.py -p stats.txt 
+   python3 ./VariLink/get_qc.py -p stats.txt 
 
 
 After the script completes, it will print:
@@ -109,7 +109,7 @@ QC Assessment
 Sequencing Recommendations
 --------------------------
 
-TopoLink was designed to support looping calling with one sample. This requires generating four libraries from a single proximity-ligation reaction. This does not mean you need to sequence all four libraries. The amount of sequencing and the number of libraries you need to to sequence is dependent on the feature you are trying to detect and the resolution (or bin size) you wish to call features at. The table below outlines the number of libraries, total sequencing depth in read pairs, and how many read pairs are needed per library, and finally the minimal amount of no-dup read pairs summed across the libraries for each feature at given resolutions:
+VariLink was designed to support looping calling with one sample. This requires generating four libraries from a single proximity-ligation reaction. This does not mean you need to sequence all four libraries. The amount of sequencing and the number of libraries you need to to sequence is dependent on the feature you are trying to detect and the resolution (or bin size) you wish to call features at. The table below outlines the number of libraries, total sequencing depth in read pairs, and how many read pairs are needed per library, and finally the minimal amount of no-dup read pairs summed across the libraries for each feature at given resolutions:
 
 +------------------+--------------+-------------------+--------------------+--------------------------------+--------------------------------------------------------+
 | Feature          | Resolution   | Total # libraries | Total # read pairs | Total # read pairs per library | Minimal # of no-dup read pairs summed across libraries |
