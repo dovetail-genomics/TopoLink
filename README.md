@@ -1,3 +1,3 @@
-# TopoLink
-TopoLink QC and data analysis
-https://topolink.readthedocs.io/en/latest/
+# VariLink
+VariLink QC and data analysis
+https://VariLink.readthedocs.io/en/latest/

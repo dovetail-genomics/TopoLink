@@ -1,6 +1,6 @@
 .. _DATASETS:
 
-TopoLink Data Sets
+VariLink Data Sets
 ==================
 
 
